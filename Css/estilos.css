@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'open sans';
+
+}
+
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+.titulo{
+    color: #642a73;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+/*Header*/
+
+header{
+    width: 100%;
+    height: 600px;
+    background: #E55D87;  
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(195, 71%, 63%, 0.63), hsla(341, 72%, 63%, 0.671)), url(../img/somosloquehacemos.jpeg);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(195, 71%, 63%, 0.63), hsla(341, 72%, 63%, 0.671)), url(../img/somosloquehacemos.jpeg); 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    position: relative;
+
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+    color: aliceblue;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.textos-header h1{
+    font-size: 50px;
+    color: white;
+}
+
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+main{
+    text-align: center;
+    padding: 30px 50px 0 0;
+}
+
+main .contenido-textos{
+    display: block;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+button{
+    display: inline-block;
+    border-radius: 20px;
+    background-color: violet;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+button > a{
+    color: aliceblue;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+img{
+    text-align: center;
+    
+}
