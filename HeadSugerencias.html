@@ -9,6 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+        function comentario(){
+            var name= document.getElementById('NAM').value;
+            var suge= document.getElementById("SUG").value;
+            var mensaje= "nombre: "+name+"\n"+"Comentario: "+suge;
+            alert(mensaje);
+
+        }
+    </script>
     <header>
         <nav>
             <a href="index.html">Inicio</a>
@@ -30,9 +39,9 @@
             
             <form action="">
                 <h2>Usuario</h2>
-                <input type="text" name="Nombre" placeholder="Nombre">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Escribe aqui tu sugerencia"></textarea>
-                <input type="button" value="Enviar sugerencia" id="button">
+                <input type="text" id="NAM" name="Nombre" placeholder="Nombre">
+                <textarea name="" id="SUG" cols="30" rows="10" placeholder="Escribe aqui tu sugerencia"></textarea>
+                <input type="button" onclick="comentario()" value="Enviar sugerencia" id="button">
             </form>
 
 
