@@ -121,13 +121,13 @@ main{
 .textos-main h4{
     color: gray;
     background-color: whitesmoke;
-    text-align: left;
+    text-align: center;
     padding: 20px 50px 0 0;
 }
 
 .textos-main h2{
     color: green;
     background-color: whitesmoke;
-    text-align: left;
+    text-align: center;
     padding: 20px 50px 0 0;
 }
