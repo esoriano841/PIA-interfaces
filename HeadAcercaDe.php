@@ -11,11 +11,7 @@
 <body>
     <header>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="HeadAcercaDe.html">Acerca de</a>
-            <a href="HeadContacto.html">Contacto</a>
-            <a href="HeadSugerencias.html">Sugerencias</a>
-            <a href="HeadListaDeMat.html">Listas de Materias</a>
+            <?php include("nav_in.php");?>
         </nav>
         <section class="textos-header">
             <h1>Facultad de Ingeniería Mecánica y Eléctrica</h1>

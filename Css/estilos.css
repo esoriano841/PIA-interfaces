@@ -101,7 +101,7 @@ main .contenido-textos{
 button{
     display: inline-block;
     border-radius: 20px;
-    background-color: violet;
+    background-color: rgb(61, 209, 147);
     border: none;
     color: white;
     text-align: center;

@@ -130,7 +130,7 @@ textarea{
 }
 #button{
     display: inline-block;
-    background-color: violet;
+    background-color: rgb(61, 235, 197);
     color: white;
     padding: 20px;
     transition: all 0.5s;
