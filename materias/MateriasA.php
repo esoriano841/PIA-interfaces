@@ -1,3 +1,6 @@
+<?php
+    include("../conexion.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,11 +15,7 @@
 <body>
     <header>
         <nav>
-            <a href="../index.html">Inicio</a>
-            <a href="../HeadAcercaDe.html">Acerca de</a>
-            <a href="../HeadContacto.html">Contacto</a>
-            <a href="../HeadSugerencias.html">Sugerencias</a>
-            <a href="../HeadListaDeMat.html">Listas de Materias</a>
+            <?php include("../nav.php");?>
         </nav>
         <section class="textos-header">
             <h1>Facultad de Ingeniería Mecánica y Eléctrica</h1>
@@ -28,24 +27,31 @@
         <section class="contenido-textos">
             <h1>Materias con la inicial A</h1>
         </section>
-        <div id="main-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Materia</th>
-                    </tr>
-                </thead>
+    <div id="main-container">
+        <table>
+            <thead>
                 <tr>
-                    <td>Adquisición de datos</td>
-                    
+                    <th>Semestre</th><th>Materia</th><th>Ingenieros que la imparten</th>
                 </tr>
-                <tr>
-                    <td>Algebra Lineal</td>
-                    
-                </tr>
-                
-            </table>
+            </thead>
+            <?php 
+                $sql = mysqli_query($con, "SELECT nombre_materia, semestre, nombre_maestro, apellido_paterno, apellido_materno FROM hora_salon INNER JOIN materia ON id_materia = idmateria INNER JOIN maestro ON id_maestro = idmaestro where nombre_materia LIKE  'A%'");
+                if(mysqli_num_rows($sql) == 0){
+                    echo '<tr><td colspan="8">No hay datos.</td></tr>';
+                }else{
+                    while($row = mysqli_fetch_assoc($sql)){
+                        echo '
+                        <tr>
+                            <td>'.$row['semestre'].'</td>
+                            <td>'.$row['nombre_materia'].'</td>
+                            <td>'.$row['nombre_maestro'].' '.$row['apellido_paterno'].' '.$row['apellido_materno'].'</td>
+                        </tr>
+                        ';
+                    }
+                }
+            ?>
+        </table>
             <br>
             <br>
             <br>
-        </div>
+    </div>

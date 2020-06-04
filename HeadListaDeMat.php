@@ -1,3 +1,6 @@
+<?php
+    include("conexion.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,11 +15,7 @@
 <body>
     <header>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="HeadAcercaDe.html">Acerca de</a>
-            <a href="HeadContacto.html">Contacto</a>
-            <a href="HeadSugerencias.html">Sugerencias</a>
-            <a href="HeadListasDeIng.html">Listas de Ingenieros</a>
+            <?php include("nav_in.php");?>
         </nav>
         <section class="textos-header">
             <h1>Facultad de Ingeniería Mecánica y Eléctrica</h1>
@@ -30,10 +29,35 @@
     <table>
         <thead>
             <tr>
-                <th>Nombre</th><th>Semestre</th><th>Descripción</th><th>Ingenieros que la imparten</th>
+                <th>Semestre</th><th>Materia</th><th>Ingenieros que la imparten</th>
             </tr>
         </thead>
-        <tr>
+        <?php 
+            $sql = mysqli_query($con, 
+            "SELECT
+                nombre_materia,
+                semestre,
+                nombre_maestro, apellido_paterno, apellido_materno
+            FROM hora_salon 
+            INNER JOIN materia
+            ON id_materia = idmateria
+            INNER JOIN maestro
+            ON id_maestro = idmaestro order by semestre");
+            if(mysqli_num_rows($sql) == 0){
+                echo '<tr><td colspan="8">No hay datos.</td></tr>';
+            }else{
+                while($row = mysqli_fetch_assoc($sql)){
+                    echo '
+                    <tr>
+                        <td>'.$row['semestre'].'</td>
+                        <td>'.$row['nombre_materia'].'</td>
+                        <td>'.$row['nombre_maestro'].' '.$row['apellido_paterno'].' '.$row['apellido_materno'].'</td>
+                    </tr>
+                    ';
+                }
+            }
+        ?>
+        <!-- <tr>
             <td>Adquisición de Datos</td><td>6to</td><td>Adquisición de variables analogas mediante el <br> desarrollo de circuitos impresos, el contenido de la <br> materia puede variar dependiendo el ingeniero</td><td>M.C. Antonio Cayetano Lozano <br> M.I.A. Ruben Abisai Campos</td>
             
         </tr>
@@ -44,7 +68,7 @@
         <tr>
             <td>Biomecanica</td><td>7mo</td><td>Analisis de las propiedades mecanicas <br> de distintas protesis, <br> así como su historia e importancia</td><td>M.C. Yadira Moreno <br>Dr. Francisco Ramirez <br>M.C. Eric Perez Lorea</td>
             
-        </tr>
+        </tr> -->
     </table>
     <br>
     <br>
